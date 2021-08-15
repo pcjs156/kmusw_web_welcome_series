@@ -1,5 +1,8 @@
 // 미지원 버튼 목록
-const unsupportedButtons = ['계산 기록', '←', 'C', '( )', '%', '÷', '×', '-', '+', '+/-', '.', '=']
+const unsupportedButtons = ['계산 기록', '←', 'C', '( )', '+/-', '.', '=']
+
+// 실질적인 계산을 수행하는 연산자 버튼 목록
+const operatorButtons = ['%', '÷', '×', '-', '+']
 
 // 입력칸
 let inputStatus = document.getElementById('input-status');
@@ -16,7 +19,17 @@ let updateInputStatus = function (e) {
         // 지원하지 않는 기능인 경우
         if (unsupportedButtons.includes(character)) {
             alert('지원하지 않는 기능입니다.');
-        } else {
+        }
+        // 기본 연산에 해당하는 경우, 입력 창을 갱신해준다.
+        // 단, 피연산자가 입력되지 않는 경우 갱신하지 않는다.
+        else if (operatorButtons.includes(character)) {
+            if (isEmpty) {
+                alert('피연산자가 입력되지 않았습니다.');
+            } else {
+                inputStatus.textContent = isEmpty ? character : inputStatus.textContent + character;
+            }
+        }
+        else {
             // TODO: 버튼별 연산 기능 추가
         }
     }
