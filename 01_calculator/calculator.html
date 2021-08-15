@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>예제 프로그램: 계산기</title>
+
+    <link type="text/css" rel="stylesheet" href="./calculator.css">
 </head>
 <body>
     <header>
-        <div>계산기 예제 프로그램</div>
+        <div class="calculator-title">계산기 예제 프로그램</div>
     </header>
     <main>
         <article>
@@ -14,6 +16,50 @@
                 <p>Javascript가 지원되지 않는 환경입니다.</p>
             </noscript>
         </article>
+        <div class="calculator-container">
+            <table class="calculator" border="1px">
+                <tr>
+                    <td colspan="4" id="input-status">수식을 입력하세요.</td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td>계산 기록</td>
+                    <td class="normal-button">←</td>
+                </tr>
+                <tr>
+                    <td class="normal-button">C</td>
+                    <td class="normal-button">( )</td>
+                    <td class="normal-button">%</td>
+                    <td class="normal-button">÷</td>
+                </tr>
+                <tr>
+                    <td class="normal-button">7</td>
+                    <td class="normal-button">8</td>
+                    <td class="normal-button">9</td>
+                    <td class="normal-button">×</td>
+                </tr>
+                <tr>
+                    <td class="normal-button">4</td>
+                    <td class="normal-button">5</td>
+                    <td class="normal-button">6</td>
+                    <td class="normal-button">-</td>
+                </tr>
+                <tr>
+                    <td class="normal-button">1</td>
+                    <td class="normal-button">2</td>
+                    <td class="normal-button">3</td>
+                    <td class="normal-button">+</td>
+                </tr>
+                <tr>
+                    <td class="normal-button">+/-</td>
+                    <td class="normal-button">0</td>
+                    <td class="normal-button">.</td>
+                    <td class="normal-button">=</td>
+                </tr>
+            </table>
+        </div>
     </main>
+
+    <script type="text/javascript" src="./calculator.js" />
 </body>
 </html>
